@@ -1,0 +1,51 @@
+
+
+html {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10px;
+  }
+  //Clientes
+.clients{
+  h2 {
+    font-size: 2rem;
+  }
+  
+
+ul ,p, li {
+    font-size: 1.5rem;
+    list-style-type: square;
+
+}
+}
+
+//name
+.name{
+div, label, input{
+font-size: 2rem;
+    padding: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+    border-width: 3px;
+    background-color: #1883ba;
+    
+
+}
+
+}
+
+//Boton1
+
+      button.boton1 {
+        
+        font-family: Helvetica, Arial, sans-serif;
+        text-decoration: none;
+        padding: 10px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        background-color: #1883ba;
+        border-radius: 3px;
+       
+
+      }
+    

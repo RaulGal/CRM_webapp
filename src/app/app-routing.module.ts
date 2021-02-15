@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ClientDetailComponent } from "./Client/client-detail/client-detail.component"
 
 
-const routes: Routes = [];
+const routes: Routes = [{ path: 'client_detail', component: ClientDetailComponent }];
 
 @NgModule({
  imports: [RouterModule.forRoot(routes)],
@@ -13,4 +13,4 @@ export class AppRoutingModule { }
 
 
 
-//{ path: 'client_detail', component: ClientDetailComponent },
+//,

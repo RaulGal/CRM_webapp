@@ -4,7 +4,7 @@ import { ClientDetailComponent } from "./Client/client-detail/client-detail.comp
 import { HomeComponent } from "src/app/home/home.component"
 
 
-const routes: Routes = [{ path: 'client_detail', component: ClientDetailComponent }, { path: "", component: HomeComponent }];
+const routes: Routes = [{ path: "client-detail", component: ClientDetailComponent }, { path: "", component: HomeComponent }];
 
 
 @NgModule({

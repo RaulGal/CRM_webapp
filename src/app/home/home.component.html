@@ -347,7 +347,7 @@
     <h2 class = "clients"><strong>CLIENTES</strong></h2>
   <ul class="clients">
   
-    <li *ngFor="let clients of clients" ><a routerLink = "client-detail" onclick="addClient()">{{clients.name}} {{clients.id}}</a></li>
+    <li *ngFor="let clients of clients " (click)="navigate()"><a routerLink = "client-detail">{{clients.name}} {{clients.id}}</a></li>
   </ul>
   
   

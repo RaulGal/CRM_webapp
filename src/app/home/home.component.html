@@ -347,7 +347,7 @@
     <h2 class = "clients"><strong>CLIENTES</strong></h2>
   <ul class="clients">
   
-    <li *ngFor="let clients of clients " (click)="navigate()"><a routerLink = "client-detail">{{clients.name}} {{clients.id}}</a></li>
+    <li *ngFor="let clients of clients " (click)="navigate(clients.id)">{{clients.name}} {{clients.id}}</li>
   </ul>
   
   
@@ -358,4 +358,4 @@
   </div>
   <br>
   <button class = "boton1" (click)="addClient()">Añadir Cliente</button>
-  
+  <!--a routerLink = "client-detail"-->

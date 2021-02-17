@@ -27,8 +27,9 @@ export class HomeComponent implements OnInit {
       id: 0,
     }
   
-    navigate (){
-      var clientsDetail = this.clients;
+    navigate (id: number){
+      this.clients.indexOf({id: this.newClient.id, name: this.newClient.name});
+    
       }
   
     addClient(){

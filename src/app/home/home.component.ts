@@ -31,9 +31,9 @@ export class HomeComponent implements OnInit {
       id: 0,
     }
   
-    navigate (id: number, router: ActivatedRoute){
+    navigate (id: number, name : string ){
       var navigateClients = this.clients.indexOf({id: this.newClient.id, name: this.newClient.name});
-      this.router.navigateByUrl('/client-detail');
+      this.router.navigateByUrl('/client-detail', {queryParams:{ id: id} } );
       }
   
     addClient(){

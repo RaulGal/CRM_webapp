@@ -32,8 +32,7 @@ export class HomeComponent implements OnInit {
     }
   
     navigate (id: number, name : string ){
-      var navigateClients = this.clients.indexOf({id: this.newClient.id, name: this.newClient.name});
-      this.router.navigateByUrl('/client-detail', {queryParams:{ id: id} } );
+       this.router.navigate(['/client-detail'], {queryParams:{ id: id, name: name}});
       }
   
     addClient(){
@@ -44,7 +43,12 @@ export class HomeComponent implements OnInit {
   
       this.clients.push({id: this.newClient.id, name: this.newClient.name});
     }
+   
   
+
+
+
+   }
 
 
     
@@ -52,7 +56,7 @@ export class HomeComponent implements OnInit {
   
     
   
-}
+
 // export class AppComponent 
 
 

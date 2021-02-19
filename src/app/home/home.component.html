@@ -350,6 +350,9 @@
     <li *ngFor="let clients of clients " (click)="navigate(clients.id, clients.name)">{{clients.name}} {{clients.id}}</li>
   </ul>
   
+  <div *ngIf="users">
+    {{ users }}
+  </div>
   
   <div class = "name">
     <label class = "name">name:

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute, ParamMap, RouteConfigLoadEnd, RouterLink } from '@angular/router';
+import { from } from 'rxjs';
 import { ClientDetailComponent } from '../Client/client-detail/client-detail.component';
+import {ClientDetailService} from "src/app/Client/client-detail.service"
 
 @Component({
   selector: 'app-home',
@@ -8,14 +10,18 @@ import { ClientDetailComponent } from '../Client/client-detail/client-detail.com
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  
 
   title4 = "HOME"
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
+  users: any;
+
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, public clientDetailService: ClientDetailService) {}
 
 
   ngOnInit(): void {
 
-
+    this.clientDetailService.getUsers().subscribe(data =>{this.users = data;
+    console.log(data);});
    
   }
 

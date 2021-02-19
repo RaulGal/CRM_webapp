@@ -6,22 +6,35 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ClientDetailComponent } from './Client/client-detail/client-detail.component';
 import { HomeComponent } from './home/home.component';
+import { ClientDetailService } from "./Client/client-detail.service";
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
+  
   declarations: [
     AppComponent,
     ClientDetailComponent,
-    HomeComponent
+    HomeComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    CommonModule,
+    HttpClientModule,
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent,
+    ClientDetailService,
+  
+  
+  ]
 })
 export class AppModule { }
 

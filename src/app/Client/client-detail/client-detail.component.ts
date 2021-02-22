@@ -7,12 +7,13 @@ import { FormsModule } from '@angular/forms';
 
 import { Identifiers } from '@angular/compiler';
 import { ClientDetailService } from "src/app/Client/client-detail.service";
+import { from, Subscriber } from "rxjs"; 
+import { subscribeOn } from 'rxjs/operators';
 
 
 @Component({
   selector: 'app-client-detail',
   templateUrl: './client-detail.component.html',
-  
   styleUrls: ['./client-detail.component.scss']
 
 
@@ -21,33 +22,29 @@ import { ClientDetailService } from "src/app/Client/client-detail.service";
 
 )
 export class ClientDetailComponent implements OnInit {
-  newClient = {
-    name: "",
-    id: 0,
-  }
 
+  users: any;
   title3 = "FICHA CLIENTE";
-  constructor(  private route: ActivatedRoute) {} 
 
- 
+
+  constructor(  private route: ActivatedRoute, public clientDetailService: ClientDetailService) {} 
+
+
   ngOnInit(): void{
+    let _this = this;
+    _this.route.queryParams.subscribe
+    (params => { 
+      _this.users.id= params.id;
+      _this.users.name = params.name;
+        console.log(_this.users.id, _this.users.name )
+      });
 
-    this.route.queryParams
-    //console.log(this.clientService);
-    
-    .subscribe( 
-     
-      params => { 
-        this.newClient.id= params.id;
-        this.newClient.name = params.name;
-        console.log(this.newClient)});
-
-
+      console.log("LOG DEL SUSCRIBE", _this.users);
   }
-
-  }
-
   
+  }
+
+
   
 
   

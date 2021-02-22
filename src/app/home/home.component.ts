@@ -11,7 +11,8 @@ import {ClientDetailService} from "src/app/Client/client-detail.service"
 })
 export class HomeComponent implements OnInit {
   
-
+  title = 'Proyecto';
+  title2 = "CRM DE RAUL";
   title4 = "HOME"
   users: any;
 
@@ -21,33 +22,24 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
     this.clientDetailService.getUsers().subscribe(data =>{this.users = data;
-    console.log(data);});
-   
-  }
+    console.log("LOG DEL GET", data);
+  });
 
+  //  this.clientDetailService.createUser({
+   //   name: "NOMBRE NUEVO AÑADIDO",
+     
+  //  }).subscribe(data =>{this.users = data;
+   //   console.log(data);});
 
-    title = 'Proyecto';
-    title2 = "CRM DE RAUL";
-   
-    
-    clients = [{name:"Raul", id: 1}, {name:"Nestor", id: 2}, {name:"Alfonso", id: 3}, {name:"Jorge", id: 4}, {name:"Eustaquio", id: 5}]
+   }
   
-    newClient = {
-      name: "",
-      id: 0,
-    }
-  
-    navigate (id: number, name : string ){
-       this.router.navigate(['/client-detail'], {queryParams:{ id: id, name: name}});
+  navigate (id: any, name : any ){
+       this.router.navigate(['/client-detail'], {queryParams:{id: id, name: name}});
+       console.log("LOG DEL NAVIGATE", name, id)
       }
   
-    addClient(){
-      
-      var length = this.clients.length;
-      
-      this.newClient.id = length + 1;
-  
-      this.clients.push({id: this.newClient.id, name: this.newClient.name});
+  addClient(){
+    this.clientDetailService.createUser({id: this.users.id, name: this.users.name});
     }
    
   

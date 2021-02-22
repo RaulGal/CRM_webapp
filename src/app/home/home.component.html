@@ -347,16 +347,14 @@
     <h2 class = "clients"><strong>CLIENTES</strong></h2>
   <ul class="clients">
   
-    <li *ngFor="let clients of clients " (click)="navigate(clients.id, clients.name)">{{clients.name}} {{clients.id}}</li>
+    <li  *ngFor="let users of users " (click)="navigate(users.id, users.name)">{{users.name}} {{users.id}}</li>
   </ul>
   
-  <div *ngIf="users">
-    {{ users }}
-  </div>
+ 
   
   <div class = "name">
     <label class = "name">name:
-      <input class = "name"   [(ngModel)]="newClient.name" placeholder="Pon tu Nombre"/>
+      <input class = "name"   [(ngModel)]="users.name" placeholder="Pon tu Nombre"/>
     </label>
   </div>
   <br>

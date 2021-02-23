@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute, ParamMap, RouteConfigLoadEnd, RouterLink } from '@angular/router';
 import { from } from 'rxjs';
-import { ClientDetailComponent } from '../Client/client-detail/client-detail.component';
 import {ClientDetailService} from "src/app/Client/client-detail.service"
+import { ClientDetailComponent } from '../Client/client-detail/client-detail.component';
+import {ClientModel} from "src/app/models/client-model"
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,7 @@ export class HomeComponent implements OnInit {
   title4 = "HOME"
   users: any;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, public clientDetailService: ClientDetailService) {}
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, public clientDetailService: ClientDetailService, clientModel: ClientModel) {}
 
 
   ngOnInit(): void {
@@ -33,9 +34,10 @@ export class HomeComponent implements OnInit {
 
    }
   
-  navigate (id: any, name : any ){
-       this.router.navigate(['/client-detail'], {queryParams:{id: id, name: name}});
-       console.log("LOG DEL NAVIGATE", name, id)
+  navigate (id: any, name : any, business: any, notes: any,
+    phone: any, street: any, plan: any ){
+       this.router.navigate(['/client-detail'], {queryParams:{id: id, name: name, business: business, notes: notes, street: street, plan: plan, phone: phone }});
+       console.log("LOG DEL NAVIGATE", name, id, business, notes, phone, street, plan)
       }
   
   addClient(){

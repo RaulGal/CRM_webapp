@@ -347,7 +347,7 @@
     <h2 class = "clients"><strong>CLIENTES</strong></h2>
   <ul class="clients">
   
-    <li  *ngFor="let users of users " (click)="navigate(users.id, users.name)">{{users.name}} {{users.id}}</li>
+    <li  *ngFor="let users of users " (click)="navigate(users.id, users.name, users.business, users.notes, users.phone, users.street, users.plan)">{{users.name}} {{users.id}} </li>
   </ul>
   
  

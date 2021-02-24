@@ -5,7 +5,7 @@ import { HomeComponent } from "src/app/home/home.component"
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-import { Identifiers } from '@angular/compiler';
+import { identifierModuleUrl, Identifiers } from '@angular/compiler';
 import { ClientDetailService } from "src/app/Client/client-detail.service";
 import { from, Subscriber } from "rxjs"; 
 import { subscribeOn } from 'rxjs/operators';
@@ -24,7 +24,15 @@ import {ClientModel} from "src/app/models/client-model"
 )
 
 export class ClientDetailComponent implements OnInit {
-users : ClientModel = {};
+users : ClientModel = {
+  id: 0,
+  name:"",
+  business: "",
+  phone:"",
+  notes: "",
+  street:"",
+  plan:"",
+};
 
 //newUsers= [{
   //name: "",
@@ -38,12 +46,12 @@ users : ClientModel = {};
 
 
 
-   //ClientModel = [] = [];
+  
   
   title3 = "FICHA CLIENTE";
 
 
-  constructor(  private route: ActivatedRoute, public clientDetailService: ClientDetailService, clientModel: ClientModel) {} 
+  constructor(  private route: ActivatedRoute, public clientDetailService: ClientDetailService) {} 
 
 
   ngOnInit(): void{
@@ -62,6 +70,7 @@ users : ClientModel = {};
     });
 
       console.log("LOG DEL SUSCRIBE", _this.users);
+
   }
   
   }

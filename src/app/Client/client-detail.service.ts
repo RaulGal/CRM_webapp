@@ -14,9 +14,8 @@ import {ClientModel} from "src/app/models/client-model";
 
 export class ClientDetailService {
 
-user: ClientModel={};
 
-  constructor(private http: HttpClient, private route: ActivatedRoute, clientModel: ClientModel) {}
+  constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
 getUsers(): Observable <any> {
   

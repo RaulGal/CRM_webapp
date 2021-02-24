@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { ClientDetailService } from "./Client/client-detail.service";
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from "@angular/common/http";
+import { ReactiveFormsComponent } from './pages/reactive-forms/reactive-forms.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -17,6 +19,7 @@ import { HttpClientModule } from "@angular/common/http";
     AppComponent,
     ClientDetailComponent,
     HomeComponent,
+    ReactiveFormsComponent,
     
     
   ],
@@ -26,6 +29,7 @@ import { HttpClientModule } from "@angular/common/http";
     FormsModule,
     CommonModule,
     HttpClientModule,
+    ReactiveFormsModule,
 
   ],
   providers: [],

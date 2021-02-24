@@ -4,6 +4,10 @@ import { from } from 'rxjs';
 import {ClientDetailService} from "src/app/Client/client-detail.service"
 import { ClientDetailComponent } from '../Client/client-detail/client-detail.component';
 import {ClientModel} from "src/app/models/client-model"
+import { FormGroup } from '@angular/forms';
+import { ReactiveFormsComponent} from "src/app/pages/reactive-forms/reactive-forms.component"
+import {ReactiveFormsModule} from '@angular/forms';
+
 
 @Component({
   selector: 'app-home',
@@ -16,9 +20,24 @@ export class HomeComponent implements OnInit {
   title2 = "CRM DE RAUL";
   title4 = "HOME"
   users: any;
+ public miFormulario: FormGroup;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, public clientDetailService: ClientDetailService, clientModel: ClientModel) {}
+constructor(private activatedRoute: ActivatedRoute, private router: Router, public clientDetailService: ClientDetailService, public formGroup: FormGroup) {
 
+this.miFormulario = new FormGroup({
+
+  "Nombre" : new FormGroup (this.users.name),
+  "Sector" : new FormGroup (this.users.business),
+  "Notas"  : new FormGroup (this.users.notes),
+  "Calle"  : new FormGroup (this.users.street),
+  "Telefono"  : new FormGroup (this.users.phone),
+  "Plan"   : new FormGroup (this.users.plan),
+});
+}
+  miSubmit() {
+    console.log(this.miFormulario.value);
+    console.log(this.miFormulario );
+  }
 
   ngOnInit(): void {
 

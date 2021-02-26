@@ -1,1 +1,49 @@
 <p>reactive-forms works!</p>
+<h1>Nuevo Cliente</h1>
+
+<form (ngSubmit) = "onSubmit()" [formGroup] = "formClient">
+<br><br>
+ <label>
+    <strong>NOMBRE:</strong><input type="text" formControlName="name"name="nombre">
+</label>
+
+<label>
+    <strong>SECTOR:</strong> 
+    <input type="text" formControlBusiness="business" name = "sector"><br><br>
+</label>
+
+
+<label>
+    
+    <strong>NOTAS:</strong> 
+    <input type="text" formControlNotes="notes" name="notas" size="100"><br><br>
+</label>
+
+
+<label>
+    
+    <strong>CALLE:</strong>
+    <input type="text" formControlStreet="street"><br><br>
+</label>
+
+<br>
+
+<label>
+    
+    <strong>TELEFONO:</strong>
+    <input type="text" formControlPhone="phone"><br><br>
+</label>
+
+<br>
+
+<label>
+    
+    <strong>PLAN:</strong>
+    <input type="text" formControlPlan="plan"><br><br>
+</label>
+
+<br>
+
+<button type="submit" [disabled]= "formClient.invalid">Submit</button>
+
+</form>

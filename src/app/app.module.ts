@@ -11,6 +11,14 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from "@angular/common/http";
 import { ReactiveFormsComponent } from './pages/reactive-forms/reactive-forms.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
+import {MatListModule} from '@angular/material/list';
+import {MatMenuModule} from "@angular/material/menu/"  
+import{MatSidenavModule} from "@angular/material/sidenav"
+import {MatToolbarModule} from "@angular/material/toolbar"
 
 
 @NgModule({
@@ -19,9 +27,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     AppComponent,
     ClientDetailComponent,
     HomeComponent,
-    ReactiveFormsComponent,
-    
-    
+    ReactiveFormsComponent, 
   ],
   imports: [
     BrowserModule,
@@ -30,7 +36,15 @@ import {ReactiveFormsModule} from '@angular/forms';
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
-
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatButtonModule,
+    MatIconModule,
+    MatListModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    
   ],
   providers: [],
   bootstrap: [

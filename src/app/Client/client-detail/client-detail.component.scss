@@ -25,13 +25,13 @@ h3 {color:rgb(71, 63, 63);
     font-family:Arial, Helvetica;
     font-weight:bolder;
     font-style:initial;
-    line-height:30px;
+    line-height:20px;
     letter-spacing:5px;
     text-decoration:lightcoral;
     text-transform:inherit;
     text-align:initial;
     background-color: lightgray;
-    padding: 10px;
+    padding: 5px;
     margin: 0 auto;
     background-origin: padding-box
     
@@ -50,4 +50,18 @@ h3 {color:rgb(71, 63, 63);
 
 
 }
+
+
+
+}
+
+button{
+    width:100%;
+	padding:8px 16px;
+	margin-top:32px;
+	border:1px solid rgb(8, 8, 8);
+	border-radius:5px;
+	display:block;
+	color:#fff;
+	background-color:rgb(13, 12, 14);
 }

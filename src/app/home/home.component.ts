@@ -7,7 +7,10 @@ import {ClientModel} from "src/app/models/client-model"
 import { FormGroup, FormControl } from '@angular/forms';
 import { ReactiveFormsComponent} from "src/app/pages/reactive-forms/reactive-forms.component"
 import {ReactiveFormsModule} from '@angular/forms';
-
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import {MatList} from "@angular/material/list"
+import {MatListModule} from '@angular/material/list';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +24,7 @@ export class HomeComponent implements OnInit {
   title4 = "HOME"
   users: any;
 
-constructor(private activatedRoute: ActivatedRoute, private router: Router, public clientDetailService: ClientDetailService) {}
+constructor(private activatedRoute: ActivatedRoute, private router: Router, public clientDetailService: ClientDetailService, ) {}
 
 
 
@@ -31,11 +34,6 @@ constructor(private activatedRoute: ActivatedRoute, private router: Router, publ
     console.log("LOG DEL GET", data);
   });
 
-  //  this.clientDetailService.createUser({
-   //   name: "NOMBRE NUEVO AÑADIDO",
-     
-  //  }).subscribe(data =>{this.users = data;
-   //   console.log(data);});
 
    }
   
@@ -46,7 +44,7 @@ constructor(private activatedRoute: ActivatedRoute, private router: Router, publ
       }
   
   addClient(){
-    this.clientDetailService.createUser({id: this.users.id, name: this.users.name});
+    this.router.navigate(['/formulario']);
     }
    
   

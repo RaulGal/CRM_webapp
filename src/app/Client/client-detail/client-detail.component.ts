@@ -51,7 +51,7 @@ users : ClientModel = {
   title3 = "FICHA CLIENTE";
 
 
-  constructor(  private route: ActivatedRoute, public clientDetailService: ClientDetailService) {} 
+  constructor( private route: ActivatedRoute, public clientDetailService: ClientDetailService, private activatedRoute: ActivatedRoute, private router: Router) {} 
 
 
   ngOnInit(): void{
@@ -72,8 +72,14 @@ users : ClientModel = {
       console.log("LOG DEL SUSCRIBE", _this.users);
 
   }
+
+  goHome(){
+
+    this.router.navigate(['/']);
+    }
+}
   
-  }
+  
 
 
   

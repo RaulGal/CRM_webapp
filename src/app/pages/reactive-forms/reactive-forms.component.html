@@ -1,49 +1,37 @@
-<p>reactive-forms works!</p>
+<!---<p>reactive-forms works!</p>-->
 <h1>Nuevo Cliente</h1>
 
 <form (ngSubmit) = "onSubmit()" [formGroup] = "formClient">
-<br><br>
- <label>
-    <strong>NOMBRE:</strong><input type="text" formControlName="name"name="nombre">
-</label>
 
-<label>
-    <strong>SECTOR:</strong> 
-    <input type="text" formControlBusiness="business" name = "sector"><br><br>
-</label>
+<label for="name">Nombre</label>
+<input type="text" name="name" id="name" placeholder="Escribe tu nombre" formControlName = "name"/>
+
+<label class="form-control" for="business">Sector</label>
+<input type="text" name="business" id="business" placeholder="Sector" formControlName = "business"/>
+
+<label class="form-control" for="phome">Telefono</label>
+<input type="text" name="phone" id="phone" placeholder="Telefono" formControlName = "phone" required />
+
+<label class="form-control" for="street">Calle</label>
+<input type ="text" name="street" id="street" placeholder="Calle" formControlName = "street"/>
+
+<label class="form-control" for="plan">Plan</label>
+<input type ="text" name="plan" id="plan" placeholder="Plan" formControlName = "plan"/>
+
+<label class="form-control" for="notes">Notas</label>
+<textarea name="notes" for="notes" placeholder="Notas" maxlength="300" formControlName = "notes"></textarea>
 
 
-<label>
-    
-    <strong>NOTAS:</strong> 
-    <input type="text" formControlNotes="notes" name="notas" size="100"><br><br>
-</label>
+
+<button class="btn btn-primary" type="submit" value="Añadir" [disabled]= "formClient.invalid" ng-class="{'disabled': myForm.$invalid}" ng-click="createUser(user)">Añadir</button>
 
 
-<label>
-    
-    <strong>CALLE:</strong>
-    <input type="text" formControlStreet="street"><br><br>
-</label>
 
-<br>
-
-<label>
-    
-    <strong>TELEFONO:</strong>
-    <input type="text" formControlPhone="phone"><br><br>
-</label>
 
 <br>
 
-<label>
-    
-    <strong>PLAN:</strong>
-    <input type="text" formControlPlan="plan"><br><br>
-</label>
-
-<br>
-
-<button type="submit" [disabled]= "formClient.invalid">Submit</button>
+<button type="goHome" mat-raised-button color="primary" class = "boton1" (click)="goHome()">Atras</button>
 
 </form>
+
+

@@ -45,14 +45,99 @@ font-size: 2rem;
 
 
       button{
-        width: 90%;
+       
       padding:5px 10px;
-      margin-top:32px;
-      border:1px solid rgb(8, 8, 8);
-      border-radius:5px;
+      margin-top:-9px;
+      margin-left: 150px;
+      
+      border-radius:0px;
       display:block;
-      color:rgb(250, 245, 245);
-      background-color:rgb(72, 72, 73);
+      color:rgb(250, 240, 240);
+      background-color:rgb(10, 10, 10);
       font-size: 20px;
-    
+      
+      position: absolute;
     }
+
+    $whiteColor: white;
+$d55Color: #080808;
+
+.container{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  .sidenav{
+    background-color: $d55Color;
+    color:rgb(250, 240, 240);
+    
+    .toolbar{
+      color: $d55Color;
+      background-color: $whiteColor;
+      display: flex;
+      justify-content: center;
+    }
+
+    .mat-selection-list{
+
+          .mat-list-option p {
+            color:rgb(250, 240, 240);
+            margin-top: 300px;
+
+            
+          }
+
+
+
+        
+    }
+  
+    /*
+    * Navigation
+    */
+    .mat-list-item a{
+     
+      text-decoration: none;
+    }
+    
+  }
+
+  .mat-sidenav-content{
+    .toolbar{
+     
+   
+
+
+    .mat-tab-group{
+
+  
+      color:rgb(8, 8, 8);
+      margin-left: 8rem ;
+      margin-top: 8rem;
+    .mat-tab{
+      color:rgb(2, 2, 2);
+
+    }
+
+ 
+   
+      }
+
+    
+  
+   
+
+
+
+   }
+   
+   
+    }
+
+
+
+
+
+  }

@@ -1,52 +1,4 @@
-<!--
-<div>
-<h1 class="cabecera">FICHA DE CLIENTE</h1>
 
-
-<div class="cabeceraDetalles">
-<br>
-<h3><strong>ID:</strong></h3> 
-<br>
-<p class="id">{{users.id}}</p>
-<br>
-  
-<h3><strong>Nombre:</strong></h3> 
-<br>
-<p class="name">{{users.name}}</p>
-<br>
-
-<h3><strong>Trabajo:</strong></h3> 
-<br>
-<p class="name">{{users.business}}</p>
-<br>
-
-<h3><strong>Notas:</strong></h3> 
-<br>
-<p class="name">{{users.notes}}</p>
-<br>
-
-<h3><strong>Telefono:</strong></h3> 
-<br>
-<p class="name">{{users.phone}}</p>
-<br>
-
-<h3><strong>Calle:</strong></h3> 
-<br>
-<p class="name">{{users.street}}</p>
-<br>
-<h3><strong>Plan:</strong></h3> 
-<p class="name">{{users.plan}}</p>
-
- 
-</div>
-
-<br>
-    
-<button type="goHome" mat-button  class = "boton1" (click)="goHome()">Atras</button>
-
-
-
-</div>-->
 
 <app-navbar></app-navbar>
 
@@ -57,16 +9,16 @@
 
 <div class="container">
 <div class="card-columns mb-5">
-<div class="card" *ngFor="let users of users">
+<div class="card" *ngFor="let users of users; ">
     {{users.id}}  - {{users.name}}
 <div class="card-body">
 <h5 class="card-title">{{users.name}}</h5>
 <p class="card-text"><small class="text-muted"> {{users.notes}} </small></p>
-<button type="button" class="btn btn-outline-warning btn-block">Ver más info</button>
+<button type="button" class="btn btn-outline-warning btn-block" (click)="navigate(users.id, users.name, users.business, users.notes, users.phone, users.street, users.plan)">Ver más info</button>
 
 
 
-    
+
         
 
 

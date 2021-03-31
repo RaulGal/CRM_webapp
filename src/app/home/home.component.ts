@@ -12,6 +12,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatList} from "@angular/material/list"
 import {MatListModule} from '@angular/material/list';
 import {MatTabsModule} from "@angular/material/tabs";
+import {ClientInfoComponent} from "src/app/client-info/client-info.component"
 
 
 @Component({
@@ -29,18 +30,13 @@ constructor(private activatedRoute: ActivatedRoute, private router: Router, publ
 
   ngOnInit(): void {
 
+ 
+
     this.clientDetailService.getUsers().subscribe(data =>{this.users = data;
-    console.log("LOG DEL GET", data);
-  });
-
-
+      console.log("LOG DEL GET", data);
+    });
    }
-  //Sin uso ahora mismo
-  navigate (id: any, name : any, business: any, notes: any,
-    phone: any, street: any, plan: any ){
-       this.router.navigate(['/client-detail'], {queryParams:{id: id, name: name, business: business, notes: notes, street: street, plan: plan, phone: phone }});
-       console.log("LOG DEL NAVIGATE", name, id, business, notes, phone, street, plan)
-      }
+
   
   addClient(){
     this.router.navigate(['/formulario']);
@@ -51,6 +47,10 @@ constructor(private activatedRoute: ActivatedRoute, private router: Router, publ
 
       this.router.navigate(['/client-detail']);
       }
+      goClientsinfo(){
+
+        this.router.navigate(['/client-info']);
+        }
 
 
    }

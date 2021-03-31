@@ -10,6 +10,8 @@ import { ClientDetailService } from "src/app/Client/client-detail.service";
 import { from, Subscriber } from "rxjs"; 
 import { subscribeOn } from 'rxjs/operators';
 import {ClientModel} from "src/app/models/client-model"
+import {ClientInfoComponent} from "src/app/client-info/client-info.component"
+
 
 
 @Component({
@@ -25,50 +27,31 @@ import {ClientModel} from "src/app/models/client-model"
 
 export class ClientDetailComponent implements OnInit {
 
-  //Sin uso en estos momentos
-//users : ClientModel = {
- // id: 0,
-  //name:"",
-  //business: "",
-  //phone:"",
-  //notes: "",
-  //street:"",
-  //plan:"",
-//};
   users: any; 
   title3 = "FICHA CLIENTE";
 
 
-  constructor( private route: ActivatedRoute, public clientDetailService: ClientDetailService, private activatedRoute: ActivatedRoute, private router: Router) {} 
+  constructor( private route: ActivatedRoute, public clientDetailService: ClientDetailService, private activatedRoute: ActivatedRoute, private router: Router, ) {} 
 
 
   ngOnInit(): void{
-    
-    let _this = this;
-    _this.route.queryParams.subscribe
-    (params => { 
-      _this.users.id= params.id;
-      _this.users.name = params.name;
-      _this.users.business = params.business;
-      _this.users.notes = params.notes ;
-      _this.users.phone = params.phone;
-      _this.users.plan = params.plan;
-      _this.users.street = params.street;
-        console.log("LOG DE LOS USERS", _this.users.id, _this.users.name )
-        
+    this.clientDetailService.getUsers().subscribe(data =>{this.users = data;
+      console.log("LOG DEL GET", data);
     });
-
-     
-
-        this.clientDetailService.getUsers().subscribe(data =>{this.users = data;
-       console.log("LOG DEL GET", data);
-     });
   }
+
+  navigate (id: any, name : any, business: any, notes: any,
+    phone: any, street: any, plan: any ){
+       this.router.navigate(['/client-info'], {queryParams:{id: id, name: name, business: business, notes: notes, street: street, plan: plan, phone: phone }});
+       console.log("LOG DEL NAVIGATE", name, id, business, notes, phone, street, plan)
+      }
 
   goHome(){
 
     this.router.navigate(['/']);
     }
+
+    
 }
   
   

@@ -4,9 +4,10 @@ import { ClientDetailComponent } from "./Client/client-detail/client-detail.comp
 import { HomeComponent } from "src/app/home/home.component";
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormsComponent } from './pages/reactive-forms/reactive-forms.component';
+import { ClientInfoComponent } from './client-info/client-info.component';
 
 
-const routes: Routes = [{ path: "client-detail", component: ClientDetailComponent }, { path: "", component: HomeComponent }, { path: "formulario", component: ReactiveFormsComponent }];
+const routes: Routes = [{ path: "client-detail", component: ClientDetailComponent }, { path: "", component: HomeComponent }, { path: "formulario", component: ReactiveFormsComponent }, { path:"client-info", component: ClientInfoComponent }];
 
 
 @NgModule({

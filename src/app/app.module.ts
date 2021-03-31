@@ -21,6 +21,7 @@ import{MatSidenavModule} from "@angular/material/sidenav"
 import {MatToolbarModule} from "@angular/material/toolbar"
 import {MatTabsModule} from "@angular/material/tabs";
 import { NavbarComponent } from './navbar/navbar.component';
+import { ClientInfoComponent } from './client-info/client-info.component';
 
 
 
@@ -34,7 +35,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     HomeComponent,
     ReactiveFormsComponent,
     NavbarComponent, 
-    ClientDetailComponent,
+    ClientDetailComponent, 
+    ClientInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     MatSidenavModule,
     MatToolbarModule,
     MatTabsModule,
+  
     
     
   ],

@@ -11,6 +11,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatList} from "@angular/material/list"
 import {MatListModule} from '@angular/material/list';
+import {MatTabsModule} from "@angular/material/tabs";
+
 
 @Component({
   selector: 'app-home',
@@ -19,13 +21,10 @@ import {MatListModule} from '@angular/material/list';
 })
 export class HomeComponent implements OnInit {
   
-  title = 'Proyecto';
-  title2 = "CRM DE RAUL";
-  title4 = "HOME"
-  users: any;
 
+users: any;
+  
 constructor(private activatedRoute: ActivatedRoute, private router: Router, public clientDetailService: ClientDetailService, ) {}
-
 
 
   ngOnInit(): void {
@@ -36,7 +35,7 @@ constructor(private activatedRoute: ActivatedRoute, private router: Router, publ
 
 
    }
-  
+  //Sin uso ahora mismo
   navigate (id: any, name : any, business: any, notes: any,
     phone: any, street: any, plan: any ){
        this.router.navigate(['/client-detail'], {queryParams:{id: id, name: name, business: business, notes: notes, street: street, plan: plan, phone: phone }});
@@ -48,7 +47,10 @@ constructor(private activatedRoute: ActivatedRoute, private router: Router, publ
     }
    
   
+    goClients(){
 
+      this.router.navigate(['/client-detail']);
+      }
 
 
    }

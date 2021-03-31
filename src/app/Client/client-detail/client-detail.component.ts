@@ -24,30 +24,18 @@ import {ClientModel} from "src/app/models/client-model"
 )
 
 export class ClientDetailComponent implements OnInit {
-users : ClientModel = {
-  id: 0,
-  name:"",
-  business: "",
-  phone:"",
-  notes: "",
-  street:"",
-  plan:"",
-};
 
-//newUsers= [{
-  //name: "",
-  //id: 0,
+  //Sin uso en estos momentos
+//users : ClientModel = {
+ // id: 0,
+  //name:"",
   //business: "",
-  //notes:"",
   //phone:"",
+  //notes: "",
+  //street:"",
   //plan:"",
-  //street: ""
-//}] 
-
-
-
-  
-  
+//};
+  users: any; 
   title3 = "FICHA CLIENTE";
 
 
@@ -66,11 +54,15 @@ users : ClientModel = {
       _this.users.phone = params.phone;
       _this.users.plan = params.plan;
       _this.users.street = params.street;
-        console.log(_this.users.id, _this.users.name )
+        console.log("LOG DE LOS USERS", _this.users.id, _this.users.name )
+        
     });
 
-      console.log("LOG DEL SUSCRIBE", _this.users);
+     
 
+        this.clientDetailService.getUsers().subscribe(data =>{this.users = data;
+       console.log("LOG DEL GET", data);
+     });
   }
 
   goHome(){

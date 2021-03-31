@@ -19,16 +19,22 @@ import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from "@angular/material/menu/"  
 import{MatSidenavModule} from "@angular/material/sidenav"
 import {MatToolbarModule} from "@angular/material/toolbar"
-import {MatTabsModule} from "@angular/material/tabs"
+import {MatTabsModule} from "@angular/material/tabs";
+import { NavbarComponent } from './navbar/navbar.component';
+
+
+
 
 
 @NgModule({
   
   declarations: [
     AppComponent,
-    ClientDetailComponent,
+   
     HomeComponent,
-    ReactiveFormsComponent, 
+    ReactiveFormsComponent,
+    NavbarComponent, 
+    ClientDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +53,7 @@ import {MatTabsModule} from "@angular/material/tabs"
     MatToolbarModule,
     MatTabsModule,
     
+    
   ],
   providers: [],
   bootstrap: [
@@ -55,6 +62,7 @@ import {MatTabsModule} from "@angular/material/tabs"
   
   
   ]
+ 
 })
 export class AppModule { }
 

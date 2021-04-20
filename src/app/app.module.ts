@@ -22,6 +22,10 @@ import {MatToolbarModule} from "@angular/material/toolbar"
 import {MatTabsModule} from "@angular/material/tabs";
 import { NavbarComponent } from './navbar/navbar.component';
 import { ClientInfoComponent } from './client-info/client-info.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import {CookieService } from 'ngx-cookie-service';
 
 
 
@@ -37,6 +41,10 @@ import { ClientInfoComponent } from './client-info/client-info.component';
     NavbarComponent, 
     ClientDetailComponent, 
     ClientInfoComponent,
+    LoginComponent,
+    RegisterComponent,
+    CalendarComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -58,7 +66,7 @@ import { ClientInfoComponent } from './client-info/client-info.component';
     
     
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [
     AppComponent,
     ClientDetailService,

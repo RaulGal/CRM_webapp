@@ -31,7 +31,7 @@ export class ClientDetailComponent implements OnInit {
   title3 = "FICHA CLIENTE";
 
 
-  constructor( private route: ActivatedRoute, public clientDetailService: ClientDetailService, private activatedRoute: ActivatedRoute, private router: Router, ) {} 
+  constructor( private route: ActivatedRoute, public clientDetailService: ClientDetailService, private activatedRoute: ActivatedRoute, private router: Router ) {} 
 
 
   ngOnInit(): void{

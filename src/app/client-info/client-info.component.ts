@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ClientDetailService } from "src/app/Client/client-detail.service";
-import { ClientDetailComponent } from '../Client/client-detail/client-detail.component';
+//import { ClientDetailComponent } from '../Client/client-detail/client-detail.component';
 import {ClientModel} from "src/app/models/client-model"
 
 
@@ -22,14 +22,10 @@ street:"",
 plan:"",
 };
 
-  constructor(private route: ActivatedRoute, public clientDetailService: ClientDetailService, private activatedRoute: ActivatedRoute, private router: Router, private clientDetailComponent: ClientDetailComponent,) { }
+  constructor(private route: ActivatedRoute, public clientDetailService: ClientDetailService, private activatedRoute: ActivatedRoute, private router: Router ) { }
 
   ngOnInit(): void{
 
-    this.clientDetailService.getUsers().subscribe(data =>{this.users = data;
-      console.log("LOG DEL GET", data);
-    });
-    
     let _this = this;
     _this.route.queryParams.subscribe
     (params => { 
@@ -43,6 +39,6 @@ plan:"",
         console.log("LOG DE LOS USERS", _this.users.id, _this.users.name )
         
     });
-
+  
   }
 }

@@ -13,6 +13,7 @@ import {MatList} from "@angular/material/list"
 import {MatListModule} from '@angular/material/list';
 import {MatTabsModule} from "@angular/material/tabs";
 import {ClientInfoComponent} from "src/app/client-info/client-info.component"
+import { UsersService } from "src/app/users.service"
 
 
 @Component({
@@ -25,12 +26,12 @@ export class HomeComponent implements OnInit {
 
 users: any;
   
-constructor(private activatedRoute: ActivatedRoute, private router: Router, public clientDetailService: ClientDetailService, ) {}
+constructor(private activatedRoute: ActivatedRoute, private router: Router, public clientDetailService: ClientDetailService, public userService: UsersService) {}
 
 
   ngOnInit(): void {
 
- 
+    this.getUserLogged();
 
     this.clientDetailService.getUsers().subscribe(data =>{this.users = data;
       console.log("LOG DEL GET", data);
@@ -51,39 +52,12 @@ constructor(private activatedRoute: ActivatedRoute, private router: Router, publ
 
         this.router.navigate(['/client-info']);
         }
-
+  getUserLogged() {
+     this.userService.getUser().subscribe(user => {
+      console.log("GETUSERLOGGED", user);
+          });
 
    }
 
 
-    
-
-  
-    
-  
-
-// export class AppComponent 
-
-
-  //title = 'Proyecto';
- // title2 = "CRM DE RAUL";
-  
- // clients = [{name:"Raul", id: 1}, {name:"Nestor", id: 2}, {name:"Alfonso", id: 3}, {name:"Jorge", id: 4}, {name:"Eustaquio", id: 5}]
-
- // newClient = {
-  //  name: "",
-  //  id: 0,
- // }
-
-
-  //addClient(){
-    
-   // var length = this.clients.length;
-    
-  //  this.newClient.id = length + 1;
-
-    //this.clients.push({id: this.newClient.id, name: this.newClient.name});
-
-
-
-
+}
